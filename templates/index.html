@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="login">
+	<h1>Emotional Intelligence Test</h1>
+ <form action="{{ url_for('predict')}}"method="post">
+  <label for="name">What is your name?</label><input type="text" id="name" name="What is your name?"><br><br>
+    <p>Which standard are you in?</p>
+  <input type="radio" name="Which standard are you in?" value="0">8<br>
+  <input type="radio" name="Which standard are you in?" value="1">9<br>
+  <input type="radio" name="Which standard are you in?" value="2">10<br>
+    <input type="radio" name="Which standard are you in?" value="3">11<br>
+  <input type="radio" name="Which standard are you in?" value="4">12<br><br>
+  <label for="scl">Which school are you studying in?</label><input type="text" id="scl" name="Which school are you studying in?"><br><br>
+  <p>What is your gender?</p>
+  <input type="radio" name="What is your gender?" value="1">Male<br>
+  <input type="radio" name="What is your gender?" value="0">Female<br>
+   
+  <p>How often do you feel lonely?</p>
+  <input type="radio" name="How often do you feel lonely?" value="0">Most of the days<br>
+  <input type="radio" name="How often do you feel lonely?" value="2">Occasionally<br>
+  <input type="radio" name="How often do you feel lonely?" value="1">Not at all<br>  
+  <p>When do you get up in the morning?</p>
+  <input type="radio" name="When do you get up in the morning?" value="0">6AM - 7AM<br>
+  <input type="radio" name="When do you get up in the morning?" value="1">7AM - 8AM<br>
+  <input type="radio" name="When do you get up in the morning?" value="2">After 8AM<br>
+  <input type="radio" name="When do you get up in the morning?" value="3">Before 6AM<br>
+  <p>What is your sleeping posture?</p>
+  <input type="radio" name="What is your sleeping posture?" value="2">Facing right<br>
+  <input type="radio" name="What is your sleeping posture?" value="1">Facing left<br>
+  <input type="radio" name="What is your sleeping posture?" value="0">Facing down<br>
+  <input type="radio" name="What is your sleeping posture?" value="3">Facing up<br><br>
+  <label for="start">How do you start your day?</label><input type="text" id="start" name="How do you start your day?"><br><br>
+  <label for="work">How do you workout everyday?</label><input type="text" id="work" name="How do you workout everyday?"><br><br>
+  <p>How much time do you spend exercising daily?</p>
+  <input type="radio" name="How much time do you spend exercising daily?" value="3">None<br>
+  <input type="radio" name="How much time do you spend exercising daily?" value="0">15 min<br>
+<input type="radio" name="How much time do you spend exercising daily?" value="2">Half an hour<br>
+  <input type="radio" name="How much time do you spend exercising daily?" value="1">> half an hour<br><br>
+  <label for="food">What is your favourite food? </label><input type="food" id="food" name="What is your favourite food?"><br><br>
+  <p>Do you take afternoon naps during holidays?</p>
+  <input type="radio" name="Do you take afternoon naps during holidays?" value="1">Yes<br>
+  <input type="radio" name="Do you take afternoon naps during holidays?" value="0">No<br><br>
+  <label for="work">How do you usually feel after a nap? </label><input type="text" id="work" name="How do you usually feel after a nap?"><br><br>
+  <p>How much time do you spend using electronic gadgets everyday?</p>
+  <input type="radio" name="How much time do you spend using electronic gadgets everyday?" value="0">1 hour<br>
+  
+<input type="radio" name="How much time do you spend using electronic gadgets everyday?" value="1">1-2hours<br>
+<input type="radio" name="How much time do you spend using electronic gadgets everyday?" value="2">2-3hours<br>
+  <input type="radio" name="How much time do you spend using electronic gadgets everyday?" value="3">> 3hours<br><br>
+  <p>What is your sleeping pattern?</p>
+  <input type="radio" name="What is your sleeping pattern?" value="3">Sound sleep<br>
+  <input type="radio" name="What is your sleeping pattern?" value="1">Difficulty to fall asleep<br>
+  <input type="radio" name="What is your sleeping pattern?" value="2">Sleep with scary or bad dreams<br>
+  <input type="radio" name="What is your sleeping pattern?" value="0">Broken sleep<br><br>
+  <p>How often do you have trouble in falling asleep?</p>
+  <input type="radio" name="How often do you have trouble in falling asleep?" value="0">Everyday<br>
+  <input type="radio" name="How often do you have trouble in falling asleep?" value="1">Not at all<br>
+<input type="radio" name="How often do you have trouble in falling asleep?" value="4">Very few days<br>
+<input type="radio" name="How often do you have trouble in falling asleep?" value="3">Sometimes when i am too tired<br>
+  <input type="radio" name="How often do you have trouble in falling asleep?" value="2">Occasionally<br><br>
+  <p>How often do you feel that you are useful and needed?</p>
+  <input type="radio" name="How often do you feel that you are useful and needed?" value="1">Never<br>
+  <input type="radio" name="How often do you feel that you are useful and needed?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you feel that you are useful and needed?" value="2">Sometimes<br><br>
+  <p>How often do you feel alienated when there are people around you?</p>
+  <input type="radio" name="How often do you feel alienated when there are people around you?" value="2">Sometimes<br>
+  <input type="radio" name="How often do you feel alienated when there are people around you?" value="1">Never<br>
+  <input type="radio" name="How often do you feel alienated when there are people around you?" value="0">Most of the time<br><br>
+  <p>How often do you have a poor appetite?</p>
+  <input type="radio" name="How often do you have a poor appetite?" value="0">Not at all<br>
+  <input type="radio" name="How often do you have a poor appetite?" value="2">Several days<br>
+  <input type="radio" name="How often do you have a poor appetite?" value="1">Occasionally<br><br>
+  <p>Do you have gradual loss or gain in weight?</p>
+  <input type="radio" name="Do you have gradual loss or gain in weight?" value="1">Severe<br>
+<input type="radio" name="Do you have gradual loss or gain in weight?" value="2">Slight<br>
+  <input type="radio" name="Do you have gradual loss or gain in weight?" value="0">No<br><br>
+  <p>How often do you feel irritable?</p>
+  <input type="radio" name="How often do you feel irritable?" value="2">Sometimes<br>
+  <input type="radio" name="How often do you feel irritable?" value="1">Never<br>
+  <input type="radio" name="How often do you feel irritable?" value="0">Most of the time<br><br>
+  <p>How often do you get tired for no reason?</p>
+  <input type="radio" name="How often do you get tired for no reason?" value="0">Good part of the time<br>
+  <input type="radio" name="How often do you get tired for no reason?" value="1">Most of the time<br>
+  <input type="radio" name="How often do you get tired for no reason?" value="2">Sometimes<br><br>
+  <label for="health">Mention a health problem which troubles you often</label><input type="text" id="health" name="Mention a health problem which troubles you often?"><br><br>
+  <p>Have you had nausea?</p>
+  <input type="radio" name="Have you had nausea?" value="0">Always<br>
+  <input type="radio" name="Have you had nausea?" value="1">During migrane attacks<br>
+  <input type="radio" name="Have you had nausea?" value="2">Like once in a month<br>
+  <input type="radio" name="Have you had nausea?" value="3">Mostly<br>
+  <input type="radio" name="Have you had nausea?" value="4">Never<br>
+  <input type="radio" name="Have you had nausea?" value="5">Not sure<br>
+  <input type="radio" name="Have you had nausea?" value="6">Only sickness<br>
+  <input type="radio" name="Have you had nausea?" value="7">Sometimes<br><br>
+  <p>How often do you feel that life isn't worth living?</p>
+  <input type="radio" name="How often do you feel that life isn't worth living?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you feel that life isn't worth living?" value="1">Not at all<br>
+  <input type="radio" name="How often do you feel that life isn't worth living?" value="2">Sometimes<br><br>
+  <p>Have things been getting on top of you?</p>
+  <input type="radio" name="Have things been getting on top of you?" value="0">No, it isn't a problem for me<br>
+  <input type="radio" name="Have things been getting on top of you?" value="1">No,most of time i have coped quite well<br>
+  <input type="radio" name="Have things been getting on top of you?" value="2">Yes, sometimes i have not been coping well<br>
+  <input type="radio" name="Have things been getting on top of you?" value="3">Yes,most of time i have not been able to cope at all<br><br>
+  <p>How often do you daydream?</p>
+  <input type="radio" name="How often do you daydream?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you daydream?" value="1">Not at all<br>
+  <input type="radio" name="How often do you daydream?" value="2">Sometimes<br><br>
+  <p>How often do you prefer to stay alone rather than being around people?</p>
+  <input type="radio" name="How often do you prefer to stay alone rather than being around people?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you prefer to stay alone rather than being around people?" value="1">Not at all<br>
+  <input type="radio" name="How often do you prefer to stay alone rather than being around people?" value="2">Sometimes<br><br>
+  <p>Relationship status</p>
+  <input type="radio" name="Relationship status" value="0">In a relationship<br>
+  <input type="radio" name="Relationship status" value="1">It's complicated<br>
+  <input type="radio" name="Relationship status" value="2">Single<br><br>
+  <p>How often do you worry about the past?</p>
+  <input type="radio" name="How often do you worry about the past?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you worry about the past?" value="1">Not at all<br>
+  <input type="radio" name="How often do you worry about the past?" value="2">Sometimes<br><br>
+  <p>Do you feel Nostalgic?</p>
+  <input type="radio" name="Do you feel Nostalgic?" value="0">Most of the time<br>
+  <input type="radio" name="Do you feel Nostalgic?" value="1">Not at all<br>
+  <input type="radio" name="Do you feel Nostalgic?" value="2">Sometimes<br><br>
+  <p>How often have you felt like crying for no reason?</p>
+  <input type="radio" name="How often have you felt like crying for no reason?" value="0">Most of the time<br>
+  <input type="radio" name="How often have you felt like crying for no reason?" value="1">Not at all<br>
+  <input type="radio" name="How often have you felt like crying for no reason?" value="2">Sometimes<br><br>
+  <p>How often do your grades and school work suffer because of the amount of time you spend online?</p>
+  <input type="radio" name="How often do your grades and school work suffer because of the amount of time you spend online?" value="0">Most of the time<br>
+  <input type="radio" name="How often do your grades and school work suffer because of the amount of time you spend online?" value="1">Not at all<br>
+  <input type="radio" name="How often do your grades and school work suffer because of the amount of time you spend online?" value="2">Sometimes<br><br>
+  <p>How do you feel when your friends and relatives succeed?</p>
+  <input type="radio" name="How do you feel when your friends and relatives succeed?" value="0">Happy and motivated<br>
+  <input type="radio" name="How do you feel when your friends and relatives succeed?" value="1">Jealous<br>
+  <input type="radio" name="How do you feel when your friends and relatives succeed?" value="2">Neutral<br>
+  <input type="radio" name="How do you feel when your friends and relatives succeed?" value="3">Sad<br><br>
+  <p>How often do you get angry at small things ?</p>
+  <input type="radio" name="How often do you get angry at small things ?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you get angry at small things ?" value="1">Not at all<br>
+  <input type="radio" name="How often do you get angry at small things ?" value="2">Sometimes<br><br>
+  <p>How often do you feel restless?</p>
+  <input type="radio" name="How often do you feel restless?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you feel restless?" value="1">Not at all<br>
+  <input type="radio" name="How often do you feel restless?" value="2">Sometimes<br><br>
+  <p>How often do you feel happy?</p>
+  <input type="radio" name="How often do you feel happy?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you feel happy?" value="1">Not at all<br>
+  <input type="radio" name="How often do you feel happy?" value="2">Sometimes<br><br>
+  <p>How often have you blamed yourself unnecessarily when things went wrong?</p>
+  <input type="radio" name="How often have you blamed yourself unnecessarily when things went wrong?" value="0">Most of the time<br>
+  <input type="radio" name="How often have you blamed yourself unnecessarily when things went wrong?" value="1">Not at all<br>
+  <input type="radio" name="How often have you blamed yourself unnecessarily when things went wrong?" value="2">Sometimes<br><br>
+  <p>How often do you prefer to stay at home,rather than going out and doing new things?</p>
+  <input type="radio" name="How often do you prefer to stay at home,rather than going out and doing new things?" value="0">Most of the time<br>
+  <input type="radio" name="How often do you prefer to stay at home,rather than going out and doing new things?" value="1">Not at all<br>
+  <input type="radio" name="How often do you prefer to stay at home,rather than going out and doing new things?" value="2">Sometimes<br><br>
+  <p>How often are you satisfied with your decisions?</p>
+  <input type="radio" name="How often are you satisfied with your decisions?" value="0">Most of the time<br>
+  <input type="radio" name="How often are you satisfied with your decisions?" value="1">Not at all<br>
+  <input type="radio" name="How often are you satisfied with your decisions?" value="2">Sometimes<br><br> 
+ <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+</form>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
