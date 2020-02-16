@@ -8,14 +8,11 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
-<body bgcolor="#F5B7B1">
+<body>
 <div class="login">
- <table align="center"><tr bgcolor="black" align="center"><td>
-	<h1><font color="#85C1E9">Emotional Intelligence Test</h1></td></tr>
-<tr bgcolor="#34495E"><td>
-<font color=#F7F9F9>
+	<h1>Emotional Intelligence Test</h1>
  <form action="{{ url_for('predict')}}"method="post">
-  <label for="name"><br><br>What is your name?</label><input type="text" id="name" name="What is your name?"><br><br>
+  <label for="name">What is your name?</label><input type="text" id="name" name="What is your name?"><br><br>
     <p>Which standard are you in?</p>
   <input type="radio" name="Which standard are you in?" value="0">8<br>
   <input type="radio" name="Which standard are you in?" value="1">9<br>
@@ -173,10 +170,7 @@
  <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
 </form>
    {{ prediction_text }}
-</td>
-</tr>
-</table>
+
  </div>
 </body>
-
 </html>
